@@ -233,3 +233,16 @@ window.addEventListener('unlockFirstCalcEvent', unlockFirstCalc);
 
 // 2) No Easter Egg:
 easterEggBtn.addEventListener('click', unlockEasterEgg);
+
+const TrophyIMG = document.getElementById("trofeuSound")
+const TrophySound = new Audio("coisas/gold.mp3");
+TrophySound.volume = 0.25;
+
+TrophyIMG.addEventListener('mouseenter', () => {
+  TrophySound.currentTime = 0;
+  TrophySound.play().catch(() => {});
+  TrophyIMG.src = "coisas/baudotesouro.png";
+});
+TrophyIMG.addEventListener('mouseleave', () => {
+  TrophyIMG.src = "coisas/trofeusf.png";
+});
