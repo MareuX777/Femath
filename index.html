@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calculadora Femboy Pixel — 100% Clean</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <div class="corner-icon-container">
+    <img id="cornerIcon" src="coisas/astolfo.png" alt="Ícone" width="40" height="40" />
+  </div>
+
+  <div id="floatingMenu" class="floating-menu">
+    <button class="menu-close">✖</button>
+    <ul>
+      <li><button onclick="alert('Suporte em breve!')">Suporte</button></li>
+      <li><button id="easterEggBtn">Easter Egg</button></li>
+      <li><button onclick="alert('Mais opções futuramente')">Mais...</button></li>
+    </ul>
+  </div>
+
+  <div id="easterEggOverlay">
+    <img src="coisas/easteregg.gif" alt="Easter Egg">
+  </div>
+
+  <!-- Ícone do painel de conquistas -->
+<div class="achievement-icon" id="achIcon">
+  <img src="coisas/trofeu.jpg" alt="Ícone de Conquistas" width="30" height="30" />
+</div>
+
+<!-- Painel de conquistas -->
+<div class="achievement-panel" id="achPanel">
+  <button class="ach-close">✖</button>
+  <h3>Conquistas</h3>
+  <ul>
+    <li id="ach-firstCalc">💡 Primeiro cálculo: <span class="status">❌</span></li>
+    <li id="ach-easterEgg">🥚 Easter Egg: <span class="status">❌</span></li>
+  </ul>
+</div>
+
+  <main class="game-window" role="application" aria-label="Calculadora femboy pixel">
+    <span class="pixel-border" aria-hidden="true"></span>
+    <div class="frame" aria-hidden="true"></div>
+
+    <div class="audio-control">
+      <button id="muteBtn" class="audio-btn" aria-pressed="true">🔈 Mudo</button>
+    </div>
+
+    <header>
+      <div class="logo">
+        <img src="coisas/maca.png" alt="Logo" height="50px">
+      </div>
+      <div class="title"><h1>Calculadora Femboy</h1></div>
+    </header>
+    <div class="display" id="display" aria-live="polite">
+      <div class="small" id="history">&nbsp;</div>
+      <div class="big" id="result">0</div>
+    </div>
+
+    <div class="keys" role="group" aria-label="Teclado da calculadora">
+      <!-- Botões da calculadora -->
+      <button class="key danger" data-action="clear">C</button>
+      <button class="key danger" data-action="back">⌫</button>
+      <button class="key danger" data-action="percent">%</button>
+      <button class="key op" data-action="/">÷</button>
+
+      <button class="key" data-num="7">7</button>
+      <button class="key" data-num="8">8</button>
+      <button class="key" data-num="9">9</button>
+      <button class="key op" data-action="*">×</button>
+
+      <button class="key" data-num="4">4</button>
+      <button class="key" data-num="5">5</button>
+      <button class="key" data-num="6">6</button>
+      <button class="key op" data-action="-">−</button>
+
+      <button class="key" data-num="1">1</button>
+      <button class="key" data-num="2">2</button>
+      <button class="key" data-num="3">3</button>
+      <button class="key op" data-action="+">+</button>
+
+      <button class="key wide" data-action="neg">±</button>
+      <button class="key" data-num="0">0</button>
+      <button class="key" data-action="dot">.</button>
+      <button class="key op wide" data-action="=">=</button>
+    </div>
+
+    <audio id="bgAudio" src="coisas/musicfundo.mp3" loop preload="auto" muted></audio>
+  </main>
+</body>
+</html>
