@@ -582,23 +582,54 @@ body.dark .theme-btn {
 }
 .astolfo-bubble {
   position: fixed;
-  bottom: 80px;
+  bottom: 90px;
   right: 20px;
   background: rgba(255,255,255,0.9);
-  border: 2px solid #cdb6ff;
-  padding: 8px 10px;
-  border-radius: 10px;
-  font-size: 9px;
-  font-family: 'Press Start 2P';
-  animation: popIn 0.3s ease;
-  z-index: 99;
+  color: #222;
+  padding: 10px 16px;
+  border-radius: 16px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  max-width: 250px;
+  line-height: 1.4;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  opacity: 0;
+  animation: bubbleFade 5s ease forwards;
+  z-index: 9999;
 }
+
+@keyframes bubbleFade {
+  0% { opacity: 0; transform: translateY(20px); }
+  10%, 90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
 body.dark .astolfo-bubble {
-  background: rgba(30,20,50,0.9);
-  border-color: #7a5aff;
-  color: #e8dcff;
+  background: rgba(45,35,70,0.9);
+  color: #fff;
 }
 @keyframes popIn {
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
+body {
+  transition: background 0.5s ease, color 0.4s ease;
+}
+
+.game-window,
+button.key,
+.display {
+  transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+}
+
+#bgParticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: var(--bg-color);
+}
+

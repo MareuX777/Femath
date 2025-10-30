@@ -3,7 +3,7 @@
 // ------------------------------
 const cornerIcon = document.getElementById('cornerIcon');
 const floatingMenu = document.getElementById('floatingMenu');
-const hoverSound = new Audio("coisas/hit.mp3");
+const hoverSound = new Audio("coisas/bebendo.mp3");
 hoverSound.volume = 0.25;
 
 // Hover e clique no ícone do canto
@@ -388,3 +388,51 @@ setInterval(() => {
   document.body.appendChild(bubble);
   setTimeout(() => bubble.remove(), 5000);
 }, 20000);
+
+// ------------------------------
+// --- FUNDO DE PARTÍCULAS REATIVO AO TEMA ---
+// ------------------------------
+const canvas = document.getElementById('bgParticles');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+function createParticles(count = 70) {
+  particles = [];
+  for (let i = 0; i < count; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 2 + 1,
+      dx: (Math.random() - 0.5) * 0.7,
+      dy: (Math.random() - 0.5) * 0.7
+    });
+  }
+}
+
+function drawParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const isDark = document.body.classList.contains('dark');
+  ctx.fillStyle = isDark ? 'rgba(255,255,255,0.8)' : 'rgba(50,50,80,0.6)';
+  for (let p of particles) {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fill();
+
+    p.x += p.dx;
+    p.y += p.dy;
+
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+  }
+  requestAnimationFrame(drawParticles);
+}
+
+createParticles();
+drawParticles();
