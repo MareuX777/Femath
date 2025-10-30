@@ -10,7 +10,7 @@ hoverSound.volume = 0.25;
 cornerIcon.addEventListener('mouseenter', () => {
   hoverSound.currentTime = 0;
   hoverSound.play().catch(() => {});
-  cornerIcon.src = "coisas/astolfoporcima.png";
+  cornerIcon.src = "coisas/astolfohalloween.png";
 });
 cornerIcon.addEventListener('mouseleave', () => cornerIcon.src = "coisas/astolfo.png");
 cornerIcon.addEventListener('click', () => floatingMenu.classList.toggle('show'));
@@ -244,7 +244,7 @@ function unlockAstolfo(showPopup = true) {
     astolfoDone = true;
     astolfoAch.querySelector('.status').textContent = '✅';
     astolfoAch.style.color = '#00aa00';
-    if (showPopup) showAchievementPopup('Astolfo adorador 💖');
+    if (showPopup) showAchievementPopup('Adorador do Astolfo 💖');
     saveAchievements();
   }
 }
@@ -325,3 +325,66 @@ trofeuIcon.addEventListener('mouseenter', () => {
 trofeuIcon.addEventListener('mouseleave', () => {
   trofeuIcon.src = "coisas/trofeusf.png";
 });
+
+// ------------------------------
+// --- MODO NOTURNO COM DOIS LOADERS ---
+// ------------------------------
+const themeBtn = document.getElementById('themeBtn');
+const darkLoader = document.getElementById('darkLoader');
+const lightLoader = document.getElementById('lightLoader');
+const savedTheme = localStorage.getItem('theme');
+
+// Aplica o tema salvo
+if (savedTheme === 'dark') {
+  document.body.classList.add('dark');
+  themeBtn.textContent = '☀️';
+  themeBtn.setAttribute('aria-pressed', 'true');
+}
+
+// Função genérica para exibir um loader e trocar o tema
+function showLoaderAndSwitch(loader, makeDark) {
+  loader.classList.add('show');
+  setTimeout(() => {
+    if (makeDark) {
+      document.body.classList.add('dark');
+      themeBtn.textContent = '☀️';
+      themeBtn.setAttribute('aria-pressed', 'true');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark');
+      themeBtn.textContent = '🌙';
+      themeBtn.setAttribute('aria-pressed', 'false');
+      localStorage.setItem('theme', 'light');
+    }
+    setTimeout(() => loader.classList.remove('show'), 800);
+  }, 700);
+}
+
+// Clique no botão 🌙 / ☀️
+themeBtn.addEventListener('click', () => {
+  const isDark = document.body.classList.contains('dark');
+  if (isDark) {
+    // Vai pro modo claro
+    showLoaderAndSwitch(lightLoader, false);
+  } else {
+    // Vai pro modo escuro
+    showLoaderAndSwitch(darkLoader, true);
+  }
+});
+
+// ------------------------------
+// --- ASTOLFO FALANTE ---
+// ------------------------------
+const messages = [
+  "Você é incrível 💕",
+  "Cuidado com o 0/0 😳",
+  "O Astolfo acredita em você!",
+  "Modo femboy ativado ✨"
+];
+setInterval(() => {
+  const bubble = document.createElement('div');
+  bubble.className = 'astolfo-bubble';
+  bubble.textContent = messages[Math.floor(Math.random()*messages.length)];
+  document.body.appendChild(bubble);
+  setTimeout(() => bubble.remove(), 5000);
+}, 20000);
