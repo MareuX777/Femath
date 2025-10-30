@@ -273,3 +273,94 @@ button.key:active { transform: translateY(2px) }
   right: 8px;
   top: 8px;
 }
+
+
+/* ----- Painel de conquistas retrô ----- */
+.achievement-icon {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 50;
+}
+
+.achievement-panel {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 400px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 4px solid var(--accent2);
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(203, 160, 255, 0.4);
+  padding: 18px 24px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 100;
+  max-width: 90vw;
+  height: 500px;
+}
+.achievement-panel.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.achievement-card {
+  background: linear-gradient(180deg, #fff, #fdf4ff);
+  border: 2px solid #e0bfff;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 8px 0;
+  box-shadow: 0 4px 8px rgba(38,22,48,0.1);
+  font-size: 9px;
+}
+.achievement-card img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.ach-close {
+  background: transparent;
+  border: none;
+  font-size: 10px;
+  cursor: pointer;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+/* ----- Pop-up animado ----- */
+.achievement-popup {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: linear-gradient(90deg, #ffc2e6, #cdb6ff);
+  color: #231022;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 10px;
+  box-shadow: 0 0 15px rgba(203,160,255,0.3);
+  transform: translateX(120%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 200;
+}
+
+/* entra */
+.achievement-popup.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* sai */
+.achievement-popup.hide {
+  transform: translateX(120%);
+  opacity: 0;
+}
+
+

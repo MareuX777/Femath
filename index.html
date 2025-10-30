@@ -28,20 +28,42 @@
   </div>
 
   <!-- Ícone do painel de conquistas -->
-<div class="achievement-icon" id="achIcon">
-  <img src="coisas/trofeusf.png" alt="Ícone de Conquistas" width="30" height="30" id="trofeuSound">
-</div>
+  <div class="achievement-icon" id="achIcon">
+    <img src="coisas/trofeusf.png" alt="Ícone de Conquistas" width="30" height="30" id="trofeuSound">
+  </div>
 
-<!-- Painel de conquistas -->
+  <!-- Painel de conquistas -->
+<!-- Painel de conquistas grande -->
 <div class="achievement-panel" id="achPanel">
-  <button class="ach-close">✖</button>
-  <h3>Conquistas</h3>
-  <ul>
-    <li id="ach-firstCalc">💡 Primeiro cálculo: <span class="status">❌</span></li>
-    <li id="ach-easterEgg">🥚 Easter Egg: <span class="status">❌</span></li>
-  </ul>
+  <div class="ach-header">
+    <h2>🏆 Conquistas</h2>
+    <button class="ach-close">✖</button>
+  </div>
+  <div class="ach-content">
+    <ul>
+      <li class="achievement-card" id="ach-firstCalc">
+        <img src="coisas/pensativo.png" alt="Primeiro cálculo">
+        💡 Primeiro cálculo: <span class="status">❌</span>
+      </li>
+      <li class="achievement-card" id="ach-easterEgg">
+        <img src="coisas/felix.png" alt="Easter Egg">
+        🥚 Easter Egg: <span class="status">❌</span>
+      </li>
+      <li class="achievement-card" id="ach-suspeito">
+        <img src="coisas/suspeito.png" alt="Suspeito">
+        🕵️ Suspeito: <span class="status">❌</span>
+      </li>
+      <li class="achievement-card" id="ach-astolfo">
+        <img src="coisas/astolfo.png" alt="Astolfo adorador">
+        💖 Astolfo adorador: <span class="status">❌</span>
+      </li>
+      <li class="achievement-card" id="ach-numeroSorte">
+        <img src="coisas/trevo.png" alt="Número da sorte">
+        🍀 Número da sorte: <span class="status">❌</span>
+      </li>
+    </ul>
+  </div>
 </div>
-
   <main class="game-window" role="application" aria-label="Calculadora femboy pixel">
     <span class="pixel-border" aria-hidden="true"></span>
     <div class="frame" aria-hidden="true"></div>
@@ -56,13 +78,13 @@
       </div>
       <div class="title"><h1>Calculadora Femboy</h1></div>
     </header>
+
     <div class="display" id="display" aria-live="polite">
       <div class="small" id="history">&nbsp;</div>
       <div class="big" id="result">0</div>
     </div>
 
     <div class="keys" role="group" aria-label="Teclado da calculadora">
-      <!-- Botões da calculadora -->
       <button class="key danger" data-action="clear">C</button>
       <button class="key danger" data-action="back">⌫</button>
       <button class="key danger" data-action="percent">%</button>
