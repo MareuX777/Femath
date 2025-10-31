@@ -3,16 +3,16 @@
 // ------------------------------
 const cornerIcon = document.getElementById('cornerIcon');
 const floatingMenu = document.getElementById('floatingMenu');
-const hoverSound = new Audio("coisas/bebendo.mp3");
+const hoverSound = new Audio("assets/bebendo.mp3");
 hoverSound.volume = 0.25;
 
 // Hover e clique no ícone do canto
 cornerIcon.addEventListener('mouseenter', () => {
   hoverSound.currentTime = 0;
   hoverSound.play().catch(() => {});
-  cornerIcon.src = "coisas/astolfohalloween.png";
+  cornerIcon.src = "assets/astolfohalloween.png";
 });
-cornerIcon.addEventListener('mouseleave', () => cornerIcon.src = "coisas/astolfo.png");
+cornerIcon.addEventListener('mouseleave', () => cornerIcon.src = "assets/astolfo.png");
 cornerIcon.addEventListener('click', () => floatingMenu.classList.toggle('show'));
 
 // Botão fechar do menu
@@ -61,7 +61,7 @@ updateMuteUI();
   let expr = '';
   let lastWasOp = false;
 
-  const clickSound = new Audio("coisas/click.mp3");
+  const clickSound = new Audio("assets/click.mp3");
   clickSound.volume = 0.25;
   function playClick() {
     clickSound.currentTime = 0;
@@ -307,7 +307,7 @@ function showAchievementPopup(title) {
   popup.textContent = `🏆 Conquista desbloqueada: ${title}!`;
   document.body.appendChild(popup);
 
-  const sound = new Audio('coisas/somdaconquista.mp3');
+  const sound = new Audio('assets/somdaconquista.mp3');
   sound.volume = 0.5;
   sound.play().catch(() => {});
 
@@ -325,17 +325,17 @@ function showAchievementPopup(title) {
 // ------------------------------
 // --- SOM E HOVER TROFÉU ---
 // ------------------------------
-const trofeuSound = new Audio("coisas/gold.mp3");
+const trofeuSound = new Audio("assets/gold.mp3");
 trofeuSound.volume = 0.25;
 const trofeuIcon = document.getElementById('trofeuSound');
 
 trofeuIcon.addEventListener('mouseenter', () => {
   trofeuSound.currentTime = 0;
   trofeuSound.play().catch(() => {});
-  trofeuIcon.src = "coisas/baudotesouro.png";
+  trofeuIcon.src = "assets/baudotesouro.png";
 });
 trofeuIcon.addEventListener('mouseleave', () => {
-  trofeuIcon.src = "coisas/trofeusf.png";
+  trofeuIcon.src = "assets/trofeusf.png";
 });
 
 // ------------------------------
