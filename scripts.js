@@ -248,6 +248,18 @@ function unlockAstolfo(showPopup = true) {
     saveAchievements();
   }
 }
+
+function unlockAstolfoClicker(showPopup = true) {
+  if (!suspeitoDone || !suspeitoAch) {
+    suspeitoDone = true;
+    suspeitoAch.querySelector('.status').textContent = '❤️';
+    suspeitoAch.style.color = '#00aa00';
+    if (showPopup) showAchievementPopup('Femboy kisser 😘');
+    saveAchievements();
+  }
+}
+
+
 function checkNumeroSorte(resultStr) {
   try {
     if (numeroSorteDone) return;
@@ -376,10 +388,11 @@ themeBtn.addEventListener('click', () => {
 // --- ASTOLFO FALANTE ---
 // ------------------------------
 const messages = [
-  "Você é incrível 💕",
-  "Cuidado com o 0/0 😳",
-  "O Astolfo acredita em você!",
-  "Modo femboy ativado ✨"
+  "Você é incrível. UwU",
+  "Cuidado com o 53*0, ＞﹏＜ (Não teste).",
+  "O Astolfo acredita em você! o((>ω<))o",
+  "Modo femboy ativado! :3"
+
 ];
 setInterval(() => {
   const bubble = document.createElement('div');
