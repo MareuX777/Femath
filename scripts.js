@@ -14,6 +14,7 @@ cornerIcon.addEventListener('mouseenter', () => {
 });
 cornerIcon.addEventListener('mouseleave', () => cornerIcon.src = "assets/astolfo.png");
 cornerIcon.addEventListener('click', () => floatingMenu.classList.toggle('show'));
+cornerIcon.addEventListener('click', () => unlockAstolfoClicker())
 
 // Botão fechar do menu
 document.querySelector('.menu-close').addEventListener('click', () => floatingMenu.classList.remove('show'));
@@ -250,7 +251,7 @@ function unlockAstolfo(showPopup = true) {
 }
 
 function unlockAstolfoClicker(showPopup = true) {
-  if (!suspeitoDone || !suspeitoAch) {
+  if (!suspeitoDone && suspeitoAch) {
     suspeitoDone = true;
     suspeitoAch.querySelector('.status').textContent = '❤️';
     suspeitoAch.style.color = '#00aa00';
