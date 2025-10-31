@@ -372,17 +372,35 @@ function showLoaderAndSwitch(loader, makeDark) {
   }, 700);
 }
 
-// Clique no botão 🌙 / ☀️
 themeBtn.addEventListener('click', () => {
   const isDark = document.body.classList.contains('dark');
   if (isDark) {
-    // Vai pro modo claro
     showLoaderAndSwitch(lightLoader, false);
   } else {
-    // Vai pro modo escuro
     showLoaderAndSwitch(darkLoader, true);
   }
 });
+
+const prefereEscuro = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if (prefereEscuro) {
+    console.log("O usuário prefere o tema escuro.");
+    document.body.classList.add('dark');
+} else {
+    console.log("O usuário prefere o tema claro (ou não tem preferência especificada).");
+    document.body.classList.add('light');
+}
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+    if (event.matches) {
+        console.log("Tema do sistema mudou para escuro!");
+        // Atualize sua UI para o tema escuro
+    } else {
+        console.log("Tema do sistema mudou para claro!");
+        // Atualize sua UI para o tema claro
+    }
+});
+
 
 // ------------------------------
 // --- ASTOLFO FALANTE ---

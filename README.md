@@ -1,3 +1,2 @@
-# femath
+# femboycalc
 Calculadora para femboys.
-@Made by YGG and LePlaga

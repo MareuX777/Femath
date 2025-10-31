@@ -1,2 +1,0 @@
-# femboycalc
-Calculadora para femboys.

@@ -8,8 +8,16 @@
   --radius: 8px;
 }
 
-* { box-sizing: border-box }
-html, body { height: 100%; margin: 0 }
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0
+}
+
 body {
   background: linear-gradient(180deg, #fff9ff 0%, #f2f7ff 100%);
   display: flex;
@@ -27,9 +35,9 @@ body {
   padding: 14px;
   border-radius: 12px;
   position: relative;
-  box-shadow: 0 18px 40px rgba(38,22,48,0.09);
+  box-shadow: 0 18px 40px rgba(38, 22, 48, 0.09);
   border: 8px solid transparent;
-  background-image: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,250,255,0.98));
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 250, 255, 0.98));
   filter: contrast(1.02);
 }
 
@@ -41,8 +49,8 @@ body {
   z-index: 0;
   display: block;
   background:
-    linear-gradient(90deg, var(--accent2) 0 20%, transparent 20% 100%),
-    linear-gradient(180deg, var(--accent1) 0 20%, transparent 20% 100%);
+    linear-gradient(90deg, var(--accent2) 0 2px, transparent 2px 100%),
+    linear-gradient(180deg, var(--accent1) 0 2px, transparent 2px 100%);
   mix-blend-mode: screen;
   opacity: 0.55;
   image-rendering: pixelated;
@@ -55,15 +63,24 @@ header {
   z-index: 2;
   position: relative;
 }
-.title h1 { font-size: 11px; margin: 0 }
-.title p { font-size: 9px; margin: 0; color: var(--muted) }
+
+.title h1 {
+  font-size: 11px;
+  margin: 0
+}
+
+.title p {
+  font-size: 9px;
+  margin: 0;
+  color: var(--muted)
+}
 
 .display {
   margin-top: 12px;
   background: #fff;
   border-radius: 8px;
   padding: 12px;
-  border: 4px solid rgba(0,0,0,0.03);
+  border: 4px solid rgba(0, 0, 0, 0.03);
   min-height: 72px;
   display: flex;
   flex-direction: column;
@@ -73,8 +90,18 @@ header {
   position: relative;
   z-index: 2;
 }
-.small { font-size: 9px; color: var(--muted); opacity: 0.9 }
-.big { font-size: 20px; line-height: 1; font-weight: 700 }
+
+.small {
+  font-size: 9px;
+  color: var(--muted);
+  opacity: 0.9
+}
+
+.big {
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 700
+}
 
 .keys {
   display: grid;
@@ -83,6 +110,7 @@ header {
   margin-top: 12px;
   z-index: 2;
 }
+
 button.key {
   padding: 12px;
   border-radius: 6px;
@@ -91,13 +119,27 @@ button.key {
   font-family: 'Press Start 2P', monospace;
   font-size: 11px;
   cursor: pointer;
-  box-shadow: 0 8px 18px rgba(38,22,48,0.06);
+  box-shadow: 0 8px 18px rgba(38, 22, 48, 0.06);
   transition: transform .06s ease;
 }
-button.key:active { transform: translateY(2px) }
-.op { background: linear-gradient(180deg, var(--accent2), var(--accent1)); color: #231022 }
-.danger { background: transparent; border: 2px solid rgba(38,22,48,0.06) }
-.wide { grid-column: span 2 }
+
+button.key:active {
+  transform: translateY(2px)
+}
+
+.op {
+  background: linear-gradient(180deg, var(--accent2), var(--accent1));
+  color: #231022
+}
+
+.danger {
+  background: transparent;
+  border: 2px solid rgba(38, 22, 48, 0.06)
+}
+
+.wide {
+  grid-column: span 2
+}
 
 .meta {
   margin-top: 12px;
@@ -115,9 +157,10 @@ button.key:active { transform: translateY(2px) }
   gap: 8px;
   align-items: center;
 }
+
 .audio-btn {
-  background: rgba(255,255,255,0.85);
-  border: 2px solid rgba(0,0,0,0.05);
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid rgba(0, 0, 0, 0.05);
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
@@ -131,8 +174,8 @@ button.key:active { transform: translateY(2px) }
   z-index: 1;
   pointer-events: none;
   background-image:
-    repeating-linear-gradient(90deg, rgba(0,0,0,0.02) 0 1px, transparent 1px 8px),
-    repeating-linear-gradient(0deg, rgba(0,0,0,0.02) 0 1px, transparent 1px 8px);
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.02) 0 1px, transparent 1px 8px),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.02) 0 1px, transparent 1px 8px);
   opacity: 0.12;
 }
 
@@ -149,24 +192,26 @@ button.key:active { transform: translateY(2px) }
   top: 60px;
   left: 12px;
   background: var(--panel);
-  border: 2px solid rgba(0,0,0,0.1);
+  border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 8px;
   display: flex;
   flex-direction: column;
   gap: 6px;
   z-index: 5;
-  box-shadow: 0 8px 20px rgba(38,22,48,0.1);
+  box-shadow: 0 8px 20px rgba(38, 22, 48, 0.1);
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
+
 .floating-menu.show {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
+
 .floating-menu ul {
   list-style: none;
   padding: 0;
@@ -175,9 +220,10 @@ button.key:active { transform: translateY(2px) }
   flex-direction: column;
   gap: 6px;
 }
+
 .floating-menu li button {
-  background: linear-gradient(180deg,#fff,#f0f0ff);
-  border: 1px solid rgba(0,0,0,0.05);
+  background: linear-gradient(180deg, #fff, #f0f0ff);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 6px;
   padding: 6px;
   font-family: 'Press Start 2P', monospace;
@@ -185,7 +231,11 @@ button.key:active { transform: translateY(2px) }
   cursor: pointer;
   transition: transform 0.06s ease;
 }
-.floating-menu li button:active { transform: translateY(2px) }
+
+.floating-menu li button:active {
+  transform: translateY(2px)
+}
+
 .menu-close {
   align-self: flex-end;
   background: transparent;
@@ -200,21 +250,29 @@ button.key:active { transform: translateY(2px) }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 100;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
+
 #easterEggOverlay img {
   max-width: 80%;
   max-height: 80%;
 }
 
 @media (max-width: 420px) {
-  .big { font-size: 18px }
-  button.key { padding: 10px; font-size: 10px }
+  .big {
+    font-size: 18px
+  }
+
+  button.key {
+    padding: 10px;
+    font-size: 10px
+  }
 }
+
 .achievement-icon {
   position: fixed;
   left: 12px;
@@ -231,34 +289,39 @@ button.key:active { transform: translateY(2px) }
   bottom: 60px;
   width: 220px;
   background: var(--panel);
-  border: 2px solid rgba(0,0,0,0.1);
+  border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 12px;
-  box-shadow: 0 8px 20px rgba(38,22,48,0.1);
+  box-shadow: 0 8px 20px rgba(38, 22, 48, 0.1);
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
   transition: opacity 0.25s ease, transform 0.25s ease;
   z-index: 51;
 }
+
 .achievement-panel.show {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
+
 .achievement-panel h3 {
   margin: 0 0 8px 0;
   font-size: 10px;
 }
+
 .achievement-panel ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .achievement-panel li {
   font-size: 9px;
   margin-bottom: 6px;
 }
+
 .achievement-panel .status {
   font-weight: bold;
 }
@@ -304,26 +367,30 @@ button.key:active { transform: translateY(2px) }
   max-width: 90vw;
   height: 500px;
 }
+
 .achievement-panel.show {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, -50%) scale(1);
 }
+
 .achievement-card {
   background: linear-gradient(180deg, #fff, #fdf4ff);
   border: 2px solid #e0bfff;
   border-radius: 8px;
   padding: 8px;
   margin: 8px 0;
-  box-shadow: 0 4px 8px rgba(38,22,48,0.1);
+  box-shadow: 0 4px 8px rgba(38, 22, 48, 0.1);
   font-size: 9px;
 }
+
 .achievement-card img {
   width: 24px;
   height: 24px;
   vertical-align: middle;
   margin-right: 8px;
 }
+
 .ach-close {
   background: transparent;
   border: none;
@@ -344,7 +411,7 @@ button.key:active { transform: translateY(2px) }
   padding: 10px 14px;
   border-radius: 8px;
   font-size: 10px;
-  box-shadow: 0 0 15px rgba(203,160,255,0.3);
+  box-shadow: 0 0 15px rgba(203, 160, 255, 0.3);
   transform: translateX(120%);
   opacity: 0;
   transition: transform 0.4s ease, opacity 0.4s ease;
@@ -381,6 +448,7 @@ button.key:active { transform: translateY(2px) }
   transition: transform 0.1s ease, background 0.3s ease, color 0.3s ease;
   font-family: 'Press Start 2P', monospace;
 }
+
 .theme-btn:active {
   transform: translateY(2px);
 }
@@ -401,34 +469,37 @@ body.dark .game-window {
 }
 
 body.dark .pixel-border {
-  background: linear-gradient(90deg, #6b4aff 0 20%, transparent 20% 100%),
-              linear-gradient(180deg, #a870ff 0 20%, transparent 20% 100%);
+  background: linear-gradient(90deg, #6b4aff 0 2px, transparent 2px 100%),
+    linear-gradient(180deg, #a870ff 0 2px, transparent 2px 100%);
   opacity: 0.3;
   mix-blend-mode: normal;
 }
 
 body.dark .display {
   background: #201729 !important;
-  border: 2px solid rgba(255,255,255,0.06);
+  border: 2px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Corrigir botões que ficam claros */
 body.dark button.key {
   background: #2a1f3a !important;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #f3e8ff;
   box-shadow: none;
 }
+
 body.dark button.key:hover {
   background: #3a2b4d !important;
 }
+
 body.dark .op {
   background: linear-gradient(180deg, #825bff, #d56fff) !important;
   color: #fff;
 }
+
 body.dark .danger {
   background: #281c3a !important;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #ffb3e3;
 }
 
@@ -462,8 +533,14 @@ body.dark .display {
 }
 
 /* Números pequenos e grandes */
-body.dark .small { color: #bcaeff; opacity: 0.8; }
-body.dark .big { color: #fff; }
+body.dark .small {
+  color: #bcaeff;
+  opacity: 0.8;
+}
+
+body.dark .big {
+  color: #fff;
+}
 
 /* Botões */
 body.dark button.key {
@@ -472,13 +549,16 @@ body.dark button.key {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
+
 body.dark button.key:hover {
   filter: brightness(1.1);
 }
+
 body.dark .op {
   background: linear-gradient(180deg, #7b4dff, #d56fff);
   color: #fff;
 }
+
 body.dark .danger {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -498,6 +578,7 @@ body.dark .achievement-panel {
   color: #e2d7ff;
   box-shadow: 0 0 25px rgba(107, 74, 255, 0.3);
 }
+
 body.dark .achievement-card {
   background: linear-gradient(180deg, #261a38, #34244e);
   border: 2px solid #7c5bff;
@@ -511,6 +592,7 @@ body.dark .floating-menu {
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
 }
+
 body.dark .floating-menu li button {
   background: linear-gradient(180deg, #241832, #3a2750);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -552,7 +634,7 @@ body.dark .theme-btn {
   text-align: center;
   font-family: 'Press Start 2P', monospace;
   font-size: 10px;
-  text-shadow: 0 0 6px rgba(0,0,0,0.5);
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 /* GIF animado */
@@ -568,6 +650,7 @@ body.dark .theme-btn {
   background: rgba(15, 10, 25, 0.95);
   color: #d9caff;
 }
+
 .dark-loader .loader-gif {
   filter: drop-shadow(0 0 8px #a370ff);
 }
@@ -577,14 +660,16 @@ body.dark .theme-btn {
   background: rgba(255, 255, 255, 0.9);
   color: #35244e;
 }
+
 .light-loader .loader-gif {
   filter: drop-shadow(0 0 8px #ffb3f0);
 }
+
 .astolfo-bubble {
   position: fixed;
   bottom: 90px;
   right: 20px;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   color: #222;
   padding: 10px 16px;
   border-radius: 16px;
@@ -592,25 +677,45 @@ body.dark .theme-btn {
   font-size: 12px;
   max-width: 250px;
   line-height: 1.4;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   opacity: 0;
   animation: bubbleFade 5s ease forwards;
   z-index: 9999;
 }
 
 @keyframes bubbleFade {
-  0% { opacity: 0; transform: translateY(20px); }
-  10%, 90% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-20px); }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  10%,
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 }
 
 body.dark .astolfo-bubble {
-  background: rgba(45,35,70,0.9);
+  background: rgba(45, 35, 70, 0.9);
   color: #fff;
 }
+
 @keyframes popIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 body {
@@ -632,4 +737,3 @@ button.key,
   z-index: -1;
   background: var(--bg-color);
 }
-
